@@ -1,0 +1,127 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #F0F6F7FF;
+    /*background-color: #FCF6F5FF;*/
+    /*background-image: -webkit-linear-gradient(top left, #F00000, #dc281e);
+    background-image: -moz-linear-gradient(top left, #F00000, #dc281e);
+    background-image: linear-gradient(to bottom right, #F00000, #dc281e);
+    */
+}
+
+.title {
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.7em;
+    font-weight: bold;
+    text-align: center;
+    color: #2D2926FF;
+    /*color: #0063B2FF;*/
+    margin: 15px 0;
+}
+
+.calculator {
+    border: 4px solid;
+    border-radius: 8px;
+    width: 30%;
+    /*display: flex;*/
+    margin: 0 auto;
+    background-color: #FCF6F5FF;   
+}
+
+.display {
+    text-align: right;
+    height: 1em;
+    margin: 2% 2% 0 2%;
+    border: 2px solid;
+    font-size: 1.7em;
+    background-color: #b5e7a0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.display:hover {
+    overflow: visible;
+}
+
+.btnContainer {
+    display: flex;
+    /*justify-content: space-between;*/
+    /*width: 30%*/
+    margin: 0 2% 2% 2%;
+    /*background-color: red;*/
+    
+}
+
+.numbers {
+    /*display: flex;   
+    justify-content: space-between;*/
+    width: 70%;
+    padding-right: 3%;
+    /*background-color: red;*/
+}
+
+.operators {
+    width: 30%;
+    /*background-color: green;*/
+}
+
+.rowContainer {
+    display: flex;    
+    justify-content: space-between;
+    /*width: 30%*/
+    margin-bottom: 15px;
+}
+
+.align {
+    display: flex;
+    justify-content: center;       
+}
+
+.clear {    
+    margin-bottom: 15px;
+}
+
+.styleBtn {
+    font-size: 1em;
+    font-weight: bold;
+    color: #FCF6F5FF;    
+    /*background-color: white;
+    border-color: white;*/
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;    
+}
+
+.widthNum {    
+    width: 30%;
+    background-color: #85B3D1FF;
+    border-color: #85B3D1FF;
+}
+
+.widthOp {
+    width: 45%;
+    background-color: #2D2926FF;
+    border-color: #2D2926FF;
+}
+
+.widthLarge {
+    width: 100%;
+}
+
+.colorClear {
+    background-color: #FF4F58FF;
+    border-color: #FF4F58FF;
+}
+
+.colorEqual {
+    background-color: #2D2926FF;
+    border-color: #2D2926FF;
+}
+
+.active {    
+    opacity: 0.7;
+}
