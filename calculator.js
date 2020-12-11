@@ -99,11 +99,14 @@ function calculate(e) {
             }
         } else {
             display.textContent += key;                
-            let count = charCount(display.textContent, ".");
-            if (regEx.test(display.textContent) == false && count > 1) {
-                display.textContent = display.textContent.slice(0,display.textContent.length-1);
-            } else if (regEx.test(display.textContent) == true && count > 2) {
-                display.textContent = display.textContent.slice(0,display.textContent.length-1);
+            let {points, operators} = charCount(display.textContent, ".+−×÷");
+            //console.log (pointCount, opCount);
+            if (regEx.test(display.textContent) == false && points > 1) {
+                display.textContent = display.textContent.slice(0,display.textContent.length-1);                
+            } else if (regEx.test(display.textContent) == true) {
+                if (points > 2 || operators > 1) {
+                    display.textContent = display.textContent.slice(0,display.textContent.length-1);
+                }                
             }            
         }            
         flag = 0;
@@ -143,10 +146,25 @@ function calculate(e) {
     }    
 }
 
-function charCount(string, character) {
+/*function charCount(string, character) {
     let count = 0;
     for (let i = 0; i < string.length; i++) {
         if (string[i] == character) count++;
     }
     return count;    
+}*/
+
+function charCount(string, character) {
+    let pointCount = 0;
+    let opCount = 0;
+    for (let i = 0; i < string.length; i++) {
+        for (let j = 0; j < character.length; j++) {
+            if (string[i] == character[j]) {
+                if (string[i] == ".") pointCount++;
+                else opCount++;
+            }
+            //(string[i] == character[j])? (string[i] == ".")? pointCount++: opCount++ : ;                         
+        }        
+    }    
+    return {points: pointCount, operators: opCount};    
 }
